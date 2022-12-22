@@ -45,6 +45,7 @@ function App() {
               <div className="room__container-map_content-description">
                 <h4>8 Doors - POOLED</h4>
                 <p>recommended players: 1-2 <br /> difficulty: ●○○○</p>
+                <button>choose map</button>
               </div>
               <div className="room__container-map_content-type">
                 <img src={normalLevel} alt="normal-level" />
