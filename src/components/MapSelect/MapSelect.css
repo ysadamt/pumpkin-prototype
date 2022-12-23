@@ -1,0 +1,89 @@
+.room__mapselect {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+
+  padding: 10px 20px 10px 20px;
+  margin-top: 1rem;
+
+  background: #111111;
+  border-radius: 10px;
+  opacity: 80%;
+  transition: 0.5s transform, 0.5s opacity;
+}
+
+.room__mapselect:hover {
+  transform: scale(1.01);
+  opacity: 100%;
+}
+
+.room__mapselect-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.room__mapselect-header h3 {
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  margin: 0 20px 0 0;
+}
+
+.room__mapselect-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.room__mapselect-content_image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.room__mapselect-content_image img {
+  width: 100px;
+  height: 100px;
+  margin: 10px 20px 10px 0;
+}
+
+.room__mapselect-content_description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.room__mapselect-content_description h4 {
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+  margin: 0;
+}
+
+.room__mapselect-content_description p {
+  font-size: 10px;
+  color: white;
+  margin-right: 20px;
+}
+
+.room__mapselect-content_description button {
+  font-size: 1.2em;
+  margin: 0;
+}
+
+.room__mapselect-content_type {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.room__mapselect-content_type img {
+  width: 70px;
+  height: 70px;
+  margin: 10px 0px 10px 0;
+}
