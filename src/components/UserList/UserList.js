@@ -18,12 +18,9 @@ const UserList = ({ type, dummyUsers }) => {
       <div className="room__userlist-content">
         <ul>
           {dummyUsers.map((user) => (
-            <>
-              <li>
-                {userDot}
-                {user}
-              </li>
-            </>
+            <li key={user}>
+              {`⬤ ${user}`}
+            </li>
           ))}
         </ul>
       </div>
