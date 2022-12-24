@@ -1,8 +1,6 @@
 import React from "react";
 import "./UserList.css";
 
-const userDot = "⬤ ";
-
 const UserList = ({ type, dummyUsers }) => {
   return (
     <div
