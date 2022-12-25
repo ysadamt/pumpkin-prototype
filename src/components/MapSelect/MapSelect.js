@@ -1,33 +1,49 @@
 import React, { useState } from "react";
-import mapImage from "../../assets/maps/8-doors.svg";
 import normalMode from "../../assets/gamemodes/normal.svg";
+import freezeMode from "../../assets/gamemodes/freeze.svg";
 import Button from "../Button/Button";
 import "./MapSelect.css";
 
 const MapSelect = (props) => {
-  const [currentMap, setCurrentMap] = useState({});
-
   return (
     <div className="room__mapselect">
       <div className="room__mapselect-header">
         <h3>Map</h3>
       </div>
-      <div className="room__mapselect-content">
-        <div className="room__mapselect-content_image">
-          <img src={mapImage} alt="map" />
-        </div>
-        <div className="room__mapselect-content_description">
-          <h3>8 Doors</h3>
-          <h4>by POOLED</h4>
-          <p>
-            recommended players: 1-2 <br /> difficulty: ●○○○
-          </p>
+      {props.currentMap === undefined ? (
+        <div className="room__mapselect-content_empty">
+          <h2>no map selected</h2>
           <Button name="choose map" handleClick={() => props.onChoose()} />
         </div>
-        <div className="room__mapselect-content_type">
-          <img src={normalMode} alt="normal-level" />
+      ) : (
+        <div className="room__mapselect-content">
+          <div className="room__mapselect-content_image">
+            <img
+              src={require(`../../assets/maps/${props.currentMap.image}`)}
+              alt={props.currentMap.name}
+            />
+          </div>
+          <div className="room__mapselect-content_description">
+            <h3>{props.currentMap.name}</h3>
+            <h4>by {props.currentMap.author}</h4>
+            <p>
+              recommended players: {props.currentMap.players}
+              <br />
+              difficulty: {props.currentMap.difficulty}
+            </p>
+            <Button name="choose map" handleClick={() => props.onChoose()} />
+          </div>
+          <div className="room__mapselect-content_type">
+            {props.currentMap.gamemodes.map((gamemode) => {
+              if (gamemode === "normal") {
+                return <img key={gamemode} src={normalMode} alt="normal" />;
+              } else {
+                return <img key={gamemode} src={freezeMode} alt="freeze" />;
+              }
+            })}
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 };

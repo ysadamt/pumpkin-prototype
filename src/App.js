@@ -12,18 +12,23 @@ const spectators = ["GMHikaru", "shigetora", "mrekk"];
 
 function App() {
   const [chooseMap, setChooseMap] = useState(false);
-
-  useEffect(() => {
-    setChooseMap(false);
-  }, []);
+  const [currentMap, setCurrentMap] = useState(undefined);
 
   const handleOnChoose = () => {
     setChooseMap((prev) => !prev);
   };
 
+  const handleOnSelected = (map) => {
+    setCurrentMap(map);
+  };
+
   return (
     <>
-      <MapMenu hide={!chooseMap} onChoose={handleOnChoose} />
+      <MapMenu
+        hide={!chooseMap}
+        onChoose={handleOnChoose}
+        onSelected={handleOnSelected}
+      />
       <div className="room__container">
         <div className="room__container-header">
           <h1>Untitled Room</h1>
@@ -35,7 +40,7 @@ function App() {
               <UserList type="Players" dummyUsers={players} />
               <UserList type="Spectators" dummyUsers={spectators} />
             </div>
-            <MapSelect onChoose={handleOnChoose} />
+            <MapSelect onChoose={handleOnChoose} currentMap={currentMap} />
           </div>
           <ChatBox />
         </div>

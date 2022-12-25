@@ -9,10 +9,6 @@ import "./MapMenu.css";
 const MapMenu = (props) => {
   const [currentMode, setCurrentMode] = useState("all");
 
-  useEffect(() => {
-    console.log(currentMode);
-  }, [currentMode]);
-
   const handleModeChange = (gamemode) => {
     setCurrentMode(gamemode);
   };
@@ -65,16 +61,42 @@ const MapMenu = (props) => {
               if currentMode is "freeze", filter out maps that don't have "freeze" in their gamemodes array, and render those maps
            */}
           {currentMode === "all"
-            ? SAMPLE_MAPS.map((map) => <MapCard key={map.id} map={map} />)
+            ? SAMPLE_MAPS.map((map) => (
+                <div
+                  key={map.id}
+                  onClick={() => {
+                    props.onChoose();
+                    props.onSelected(map);
+                  }}
+                >
+                  <MapCard key={map.id} map={map} />
+                </div>
+              ))
             : currentMode === "normal"
             ? SAMPLE_MAPS.filter((map) => map.gamemodes.includes("normal")).map(
                 (filteredMap) => (
-                  <MapCard key={filteredMap.id} map={filteredMap} />
+                  <div
+                    key={filteredMap.id}
+                    onClick={() => {
+                      props.onChoose();
+                      props.onSelected(filteredMap);
+                    }}
+                  >
+                    <MapCard key={filteredMap.id} map={filteredMap} />
+                  </div>
                 )
               )
             : SAMPLE_MAPS.filter((map) => map.gamemodes.includes("freeze")).map(
                 (filteredMap) => (
-                  <MapCard key={filteredMap.id} map={filteredMap} />
+                  <div
+                    key={filteredMap.id}
+                    onClick={() => {
+                      props.onChoose();
+                      props.onSelected(filteredMap);
+                    }}
+                  >
+                    <MapCard key={filteredMap.id} map={filteredMap} />
+                  </div>
                 )
               )}
         </div>
