@@ -5,6 +5,7 @@ import ChatBox from "./components/ChatBox/ChatBox";
 import MapSelect from "./components/MapSelect/MapSelect";
 import UserList from "./components/UserList/UserList";
 import MapMenu from "./containers/MapMenu/MapMenu";
+import Button from "./components/Button/Button";
 
 const players = ["POOLED (host)", "jas"];
 const spectators = ["GMHikaru", "shigetora", "mrekk"];
@@ -18,12 +19,11 @@ function App() {
 
   const handleOnChoose = () => {
     setChooseMap((prev) => !prev);
-    console.log(chooseMap);
   };
 
   return (
     <>
-      <MapMenu hide={!chooseMap} />
+      <MapMenu hide={!chooseMap} onChoose={handleOnChoose} />
       <div className="room__container">
         <div className="room__container-header">
           <h1>Untitled Room</h1>
@@ -41,9 +41,9 @@ function App() {
         </div>
 
         <div className="room__container-buttons">
-          <button>start</button>
-          <button>spectate</button>
-          <button>leave</button>
+          <Button name="start" handleClick={() => {}} />
+          <Button name="spectate" handleClick={() => {}} />
+          <Button name="leave" handleClick={() => {}} />
         </div>
       </div>
     </>

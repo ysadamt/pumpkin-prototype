@@ -1,6 +1,7 @@
 import React from "react";
 import mapImage from "../../assets/maps/8-doors.svg";
 import normalMode from "../../assets/gamemodes/normal.svg";
+import Button from "../Button/Button";
 import "./MapSelect.css";
 
 const MapSelect = (props) => {
@@ -19,7 +20,7 @@ const MapSelect = (props) => {
           <p>
             recommended players: 1-2 <br /> difficulty: ●○○○
           </p>
-          <button onClick={() => props.onChoose()}>choose map</button>
+          <Button name="choose map" handleClick={() => props.onChoose()} />
         </div>
         <div className="room__mapselect-content_type">
           <img src={normalMode} alt="normal-level" />
