@@ -1,8 +1,14 @@
 import React from "react";
 import "./Button.css";
 
-const Button = (props) => {
-  return <button onClick={() => props.handleClick()}>{props.name}</button>;
+const Button = ({ name, handleClick }) => {
+  /**
+   * PROPS:
+   * @param {string} name text for the button
+   * @param {() => void} handleClick function that handles the button click event
+   */
+
+  return <button onClick={() => handleClick()}>{name}</button>;
 };
 
 export default Button;

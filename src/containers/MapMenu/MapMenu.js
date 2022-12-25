@@ -6,7 +6,7 @@ import MapCard from "../../components/MapCard/MapCard";
 import { SAMPLE_MAPS } from "./SampleMaps";
 import "./MapMenu.css";
 
-const MapMenu = (props) => {
+const MapMenu = ({ hide, onChoose, onSelected }) => {
   /**
    * PROPS:
    * @param {boolean} hide determines if MapMenu is hidden
@@ -29,14 +29,14 @@ const MapMenu = (props) => {
   return (
     <div
       // if hide is true, then window is hidden
-      className={props.hide ? "hidden window" : "scrollable window"}
+      className={hide ? "hidden window" : "scrollable window"}
       // mapMenu appears above everything else
       style={{ zIndex: 1 }}
     >
       <div className="mapMenu__container">
         <div className="mapMenu__container-close">
           {/* close button */}
-          <Button name="close" handleClick={() => props.onChoose()} />
+          <Button name="close" handleClick={() => onChoose()} />
         </div>
         <div className="mapMenu__container-header">
           <h1>level select</h1>
@@ -85,8 +85,8 @@ const MapMenu = (props) => {
                 <div
                   key={map.id}
                   onClick={() => {
-                    props.onChoose();
-                    props.onSelected(map);
+                    onChoose();
+                    onSelected(map);
                   }}
                 >
                   <MapCard key={map.id} map={map} />
@@ -98,8 +98,8 @@ const MapMenu = (props) => {
                   <div
                     key={filteredMap.id}
                     onClick={() => {
-                      props.onChoose();
-                      props.onSelected(filteredMap);
+                      onChoose();
+                      onSelected(filteredMap);
                     }}
                   >
                     <MapCard key={filteredMap.id} map={filteredMap} />
@@ -111,8 +111,8 @@ const MapMenu = (props) => {
                   <div
                     key={filteredMap.id}
                     onClick={() => {
-                      props.onChoose();
-                      props.onSelected(filteredMap);
+                      onChoose();
+                      onSelected(filteredMap);
                     }}
                   >
                     <MapCard key={filteredMap.id} map={filteredMap} />

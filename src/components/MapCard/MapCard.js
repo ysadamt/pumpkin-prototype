@@ -3,7 +3,7 @@ import normalMode from "../../assets/gamemodes/normal.svg";
 import freezeMode from "../../assets/gamemodes/freeze.svg";
 import "./MapCard.css";
 
-const MapCard = (props) => {
+const MapCard = ({ map }) => {
   /**
    * PROPS:
    * @param {Map} map Map object to be displayed on the card
@@ -13,23 +13,23 @@ const MapCard = (props) => {
     <div className="mapCard__container">
       <div className="mapCard__container-mapImg">
         <img
-          src={require(`../../assets/maps/${props.map.image}`)}
-          alt={props.map.name}
+          src={require(`../../assets/maps/${map.image}`)}
+          alt={map.name}
         />
       </div>
       <div className="mapCard__container-info">
         <div className="mapCard__container-text">
-          <h2>{props.map.name}</h2>
-          <h3>by {props.map.author}</h3>
+          <h2>{map.name}</h2>
+          <h3>by {map.author}</h3>
           <p>
-            recommended players: {props.map.players}
+            recommended players: {map.players}
             <br />
-            difficulty: {props.map.difficulty}
+            difficulty: {map.difficulty}
           </p>
         </div>
         <div className="mapCard__container-gamemodes">
           {/* map out all the gamemodes */}
-          {props.map.gamemodes.map((gamemode) => {
+          {map.gamemodes.map((gamemode) => {
             if (gamemode === "normal") {
               return <img key={gamemode} src={normalMode} alt="normal" />;
             } else {
