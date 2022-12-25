@@ -1,19 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import mapImage from "../../assets/maps/8-doors.svg";
 import normalMode from "../../assets/gamemodes/normal.svg";
 import "./MapSelect.css";
 
-const MapSelect = () => {
-  const [chooseMap, setChooseMap] = useState(false);
-
-  useEffect(() => {
-    setChooseMap(false);
-  }, []);
-
-  const handleChooseMap = () => {
-    setChooseMap(true);
-    console.log(chooseMap);
-  };
+const MapSelect = (props) => {
 
   return (
     <div className="room__mapselect">
@@ -29,7 +19,7 @@ const MapSelect = () => {
           <p>
             recommended players: 1-2 <br /> difficulty: ●○○○
           </p>
-          <button onClick={handleChooseMap}>choose map</button>
+          <button onClick={() => props.onChoose()}>choose map</button>
         </div>
         <div className="room__mapselect-content_type">
           <img src={normalMode} alt="normal-level" />
