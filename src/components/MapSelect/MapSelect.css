@@ -31,6 +31,21 @@
   margin: 0 20px 0 0;
 }
 
+.room__mapselect-content_empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0.65rem 0 0.65rem 0;
+}
+
+.room__mapselect-content_empty h2 {
+  color: white;
+  font-weight: normal;
+  margin-block-start: 0.5rem;
+  margin-block-end: 0.5rem;
+}
+
 .room__mapselect-content {
   display: flex;
   flex-direction: row;
