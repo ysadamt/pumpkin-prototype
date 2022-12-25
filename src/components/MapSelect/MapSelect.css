@@ -31,6 +31,7 @@
   margin: 0 20px 0 0;
 }
 
+/* styles when no map is selected */
 .room__mapselect-content_empty {
   display: flex;
   flex-direction: column;

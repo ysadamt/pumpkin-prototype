@@ -23,7 +23,6 @@
 .room__container-header h1 {
   text-align: center;
   color: white;
-  font-weight: bold;
 }
 
 /* Content */
@@ -34,11 +33,9 @@
   align-items: stretch;
   margin-left: 18rem;
   margin-right: 18rem;
-
-  /* height: 700px; */
 }
 
-/* Left Column */
+/* Left Column: Players, Spectators, Map */
 .room__container-content_left {
   display: flex;
   flex: 2;
@@ -46,7 +43,7 @@
   margin-right: 1rem;
 }
 
-/* Top Left */
+/* Top Left: Players, Spectators */
 .room__container-content_left-top {
   display: flex;
   flex-direction: row;

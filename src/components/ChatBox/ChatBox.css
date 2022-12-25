@@ -15,6 +15,11 @@
   transition: 0.5s transform, 0.5s opacity;
 }
 
+.room__chatbox:hover {
+  transform: scale(1.01);
+  opacity: 100%;
+}
+
 .room__chatbox-header h3 {
   text-align: center;
   color: white;
@@ -56,7 +61,7 @@
 }
 
 .room__chatbox-input input {
-	font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 10px;
   color: white;
   width: 100%;
@@ -65,9 +70,4 @@
   border: 2px solid #1d1d1d;
   outline: none;
   background: none;
-}
-
-.room__chatbox:hover {
-  transform: scale(1.01);
-  opacity: 100%;
 }

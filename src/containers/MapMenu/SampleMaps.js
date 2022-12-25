@@ -1,3 +1,4 @@
+// Sample maps from pumpkin.io
 export const SAMPLE_MAPS = [
   {
     id: 1,

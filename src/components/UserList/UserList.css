@@ -1,5 +1,5 @@
 .room__userlist {
-  display: flex ;
+  display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
@@ -14,6 +14,7 @@
   opacity: 80%;
 }
 
+/* hover animation: scale by 1% and change opacity to 100% */
 .room__userlist:hover {
   transform: scale(1.01);
   opacity: 100%;
@@ -49,9 +50,11 @@
 }
 
 .room__userlist-content li {
-  list-style-type: none;
   color: white;
   font-size: 10px;
   line-height: 20px;
   margin: 0;
+
+  /* remove default bullet points for <li> elements */
+  list-style-type: none;
 }

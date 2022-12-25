@@ -7,19 +7,35 @@ import { SAMPLE_MAPS } from "./SampleMaps";
 import "./MapMenu.css";
 
 const MapMenu = (props) => {
+  /**
+   * PROPS:
+   * @param {boolean} hide determines if MapMenu is hidden
+   * @param {() => void} onChoose sets the chooseMap state in parent, determines if MapMenu is open or closed
+   * @param {(map) => void} onSelected sets the currentMap state in parent, determines the current selected map
+   */
+
+  // currentMode defaults to "all"
   const [currentMode, setCurrentMode] = useState("all");
 
+  /**
+   * Handles event when choose gamemode buttons are clicked
+   * sets currentMode state depending on which button is clicked
+   * @param {string} gamemode values are "all", "normal" or "freeze"
+   */
   const handleModeChange = (gamemode) => {
     setCurrentMode(gamemode);
   };
 
   return (
     <div
+      // if hide is true, then window is hidden
       className={props.hide ? "hidden window" : "scrollable window"}
+      // mapMenu appears above everything else
       style={{ zIndex: 1 }}
     >
       <div className="mapMenu__container">
         <div className="mapMenu__container-close">
+          {/* close button */}
           <Button name="close" handleClick={() => props.onChoose()} />
         </div>
         <div className="mapMenu__container-header">
@@ -28,10 +44,12 @@ const MapMenu = (props) => {
         <div className="mapMenu__container-gamemodes">
           <h3>choose gamemode</h3>
           <div className="mapMenu__container-gamemodes_icons">
+            {/* button id changes to signify if button is selected */}
             <button
               id={
                 currentMode === "normal" ? "gamemodeSelected" : "gamemodeSelect"
               }
+              // if currentMode is "normal", clicking it will revert it back to "all"
               onClick={() => {
                 currentMode === "normal"
                   ? handleModeChange("all")
@@ -40,10 +58,12 @@ const MapMenu = (props) => {
             >
               <img src={normalMode} alt="normal" />
             </button>
+            {/* button id changes to signify if button is selected */}
             <button
               id={
                 currentMode === "freeze" ? "gamemodeSelected" : "gamemodeSelect"
               }
+              // if currentMode is "freeze", clicking it will revert it back to "all"
               onClick={() => {
                 currentMode === "freeze"
                   ? handleModeChange("all")
@@ -55,7 +75,7 @@ const MapMenu = (props) => {
           </div>
         </div>
         <div className="mapMenu__container-mapGrid">
-          {/* pseudocode:
+          {/* 
               if currentMode is "all", render all maps
               if currentMode is "normal", filter out maps that don't have "normal" in their gamemodes array, and render those maps
               if currentMode is "freeze", filter out maps that don't have "freeze" in their gamemodes array, and render those maps

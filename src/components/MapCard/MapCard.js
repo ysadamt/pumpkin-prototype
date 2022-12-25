@@ -4,6 +4,11 @@ import freezeMode from "../../assets/gamemodes/freeze.svg";
 import "./MapCard.css";
 
 const MapCard = (props) => {
+  /**
+   * PROPS:
+   * @param {Map} map Map object to be displayed on the card
+   */
+
   return (
     <div className="mapCard__container">
       <div className="mapCard__container-mapImg">
@@ -23,6 +28,7 @@ const MapCard = (props) => {
           </p>
         </div>
         <div className="mapCard__container-gamemodes">
+          {/* map out all the gamemodes */}
           {props.map.gamemodes.map((gamemode) => {
             if (gamemode === "normal") {
               return <img key={gamemode} src={normalMode} alt="normal" />;

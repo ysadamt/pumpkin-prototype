@@ -5,11 +5,18 @@ import Button from "../Button/Button";
 import "./MapSelect.css";
 
 const MapSelect = (props) => {
+  /**
+   * PROPS:
+   * @param {Map | undefined} currentMap current map displayed in MapSelect
+   * @param {() => void} onChoose sets the chooseMap state in parent, determines if MapMenu is open or closed
+   */
+
   return (
     <div className="room__mapselect">
       <div className="room__mapselect-header">
         <h3>Map</h3>
       </div>
+      {/* render different layouts depending if currentMap is defined */}
       {props.currentMap === undefined ? (
         <div className="room__mapselect-content_empty">
           <h2>no map selected</h2>
@@ -34,6 +41,7 @@ const MapSelect = (props) => {
             <Button name="choose map" handleClick={() => props.onChoose()} />
           </div>
           <div className="room__mapselect-content_type">
+            {/* map out all the gamemodes */}
             {props.currentMap.gamemodes.map((gamemode) => {
               if (gamemode === "normal") {
                 return <img key={gamemode} src={normalMode} alt="normal" />;
