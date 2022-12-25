@@ -6,28 +6,31 @@ import "./MapCard.css";
 const MapCard = (props) => {
   return (
     <div className="mapCard__container">
-      <img
-        src={require(`../../assets/maps/${props.map.image}`)}
-        alt={props.map.name}
-      />
-      <div className="mapCard__container-text">
-        <h3>
-          {props.map.name} - {props.map.author}
-        </h3>
-        <p>
-          recommended players: {props.map.players}
-          <br />
-          difficulty: {props.map.difficulty}
-        </p>
+      <div className="mapCard__container-mapImg">
+        <img
+          src={require(`../../assets/maps/${props.map.image}`)}
+          alt={props.map.name}
+        />
       </div>
-      <div className="mapCard__container-gamemodes">
-        {props.map.gamemodes.map((gamemode) => {
-          if (gamemode === "normal") {
-            return <img src={normalMode} alt="normal"/>;
-          } else {
-            return <img src={freezeMode} alt="freeze"/>;
-          }
-        })}
+      <div className="mapCard__container-info">
+        <div className="mapCard__container-text">
+          <h2>{props.map.name}</h2>
+          <h3>by {props.map.author}</h3>
+          <p>
+            recommended players: {props.map.players}
+            <br />
+            difficulty: {props.map.difficulty}
+          </p>
+        </div>
+        <div className="mapCard__container-gamemodes">
+          {props.map.gamemodes.map((gamemode) => {
+            if (gamemode === "normal") {
+              return <img key={gamemode} src={normalMode} alt="normal" />;
+            } else {
+              return <img key={gamemode} src={freezeMode} alt="freeze" />;
+            }
+          })}
+        </div>
       </div>
     </div>
   );

@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import mapImage from "../../assets/maps/8-doors.svg";
 import normalMode from "../../assets/gamemodes/normal.svg";
 import Button from "../Button/Button";
 import "./MapSelect.css";
 
 const MapSelect = (props) => {
+  const [currentMap, setCurrentMap] = useState({});
 
   return (
     <div className="room__mapselect">
@@ -16,7 +17,8 @@ const MapSelect = (props) => {
           <img src={mapImage} alt="map" />
         </div>
         <div className="room__mapselect-content_description">
-          <h4>8 Doors - POOLED</h4>
+          <h3>8 Doors</h3>
+          <h4>by POOLED</h4>
           <p>
             recommended players: 1-2 <br /> difficulty: ●○○○
           </p>

@@ -1,6 +1,6 @@
 .window {
   position: fixed;
-  background: rgba(0, 0, 0, 0.75);
+  background: rgba(0, 0, 0, 0.8);
   opacity: 1;
   width: 100%;
   height: 100%;
@@ -31,6 +31,7 @@
   width: 100%;
   height: 100%;
   transition: 0.3s opacity;
+  padding-bottom: 5rem;
 }
 
 .mapMenu__container-close {
@@ -63,11 +64,28 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  margin-bottom: 20px;
 }
 
-.mapMenu__container-gamemodes_icons img {
-  margin: 0 0.2rem 0 0.2rem;
-  cursor: pointer;
+#gamemodeSelect {
+  border-radius: 50%;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#gamemodeSelect:hover {
+  background: #4480ff;
+}
+
+#gamemodeSelected {
+  border-radius: 50%;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #4480ff;
 }
 
 .mapMenu__container-mapGrid {

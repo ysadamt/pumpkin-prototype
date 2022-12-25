@@ -57,17 +57,23 @@
   align-items: flex-start;
 }
 
+.room__mapselect-content_description h3 {
+  color: white;
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin: 0;
+}
 .room__mapselect-content_description h4 {
   color: white;
   font-weight: bold;
-  font-size: 14px;
+  font-size: 0.75rem;
   margin: 0;
 }
 
 .room__mapselect-content_description p {
   font-size: 10px;
   color: white;
-  margin-right: 20px;
+  margin: 0.25rem 2rem 0.25rem 0;
 }
 
 .room__mapselect-content_description button {
