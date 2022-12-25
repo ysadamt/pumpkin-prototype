@@ -1,4 +1,4 @@
-import react, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./App.css";
 
 import ChatBox from "./components/ChatBox/ChatBox";

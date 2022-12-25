@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import normalMode from "../../assets/gamemodes/normal.svg";
 import freezeMode from "../../assets/gamemodes/freeze.svg";
 import Button from "../../components/Button/Button";
