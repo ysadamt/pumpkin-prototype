@@ -1,5 +1,5 @@
 # Design Prototypes for pumpkin.io
-Revamped game interface designs for the online game [pumpkin.io](https://pumpkin.io) by [POOLED](https://github.com/ElectrifyPro). Built with React.
+Revamped game interface designs for the online game [pumpkin.io](https://pumpkin.io) by [POOLED](https://github.com/ElectrifyPro). Built with React, deployed with Vercel.
 
 ## Designs
 I wanted to keep the feel of the original design but give it a sleeker and modern look. A responsive layout, rounded corners, and animations were the main design changes.
