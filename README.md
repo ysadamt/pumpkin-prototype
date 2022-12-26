@@ -10,13 +10,13 @@ I wanted to keep the feel of the original design but give it a sleeker and moder
 
 ![room comparison](/public/mockups/room-both.png)
 
-<p align="center" style="font-style: italic">Room lobby</p>
+<p align="center" style="font-style: italic">Before and after: room lobby</p>
 
 <br />
 
 ![map comparison](/public/mockups/map-select-both.png)
 
-<p align="center" style="font-style: italic">Level select</p>
+<p align="center" style="font-style: italic">Before and after: level select</p>
 
 ## Local Development
 
