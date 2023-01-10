@@ -1,0 +1,64 @@
+.room__container {
+  display: flex;
+  flex-direction: column;
+  align-items: space-between;
+  justify-content: center;
+
+  height: 100%;
+  width: 100%;
+}
+
+/* Header */
+.room__container-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+
+  width: 100%;
+  height: 100%;
+}
+
+.room__container-header h1 {
+  text-align: center;
+  color: white;
+}
+
+/* Content */
+.room__container-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+  margin-left: 18rem;
+  margin-right: 18rem;
+}
+
+/* Left Column: Players, Spectators, Map */
+.room__container-content_left {
+  display: flex;
+  flex: 2;
+  flex-direction: column;
+  margin-right: 1rem;
+}
+
+/* Top Left: Players, Spectators */
+.room__container-content_left-top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+/* Buttons */
+.room__container-buttons {
+  position: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  padding-top: 35px;
+  padding-bottom: 25px;
+}
