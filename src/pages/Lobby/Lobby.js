@@ -63,7 +63,7 @@ const Lobby = () => {
         {/* Buttons */}
         <div className="room__container-buttons">
           <Button name="start" handleClick={() => {}} />
-          <Button name="spectate" handleClick={() => {}} />\
+          <Button name="spectate" handleClick={() => {}} />
           <Link to="leaderboard">
             <Button name="leave" handleClick={() => {}} />
           </Link>
