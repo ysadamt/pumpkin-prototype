@@ -6,8 +6,10 @@ import { SAMPLE_LEADERBOARDS } from "./SampleLeaderboards";
 import { Link } from "react-router-dom";
 
 const Leaderboard = () => {
+  // state to keep track of the current leaderboard selected
   const [currentLeaderboard, setCurrentLeaderboard] = useState("8 Doors");
 
+  // function to handle leaderboard selection
   const handleLeaderboardSelect = (leaderboard) => {
     setCurrentLeaderboard(leaderboard);
   };
@@ -78,6 +80,7 @@ const Leaderboard = () => {
           </div>
         </div>
         <div className="leaderboard__container-footer">
+        {/* close button */}
           <Link to="/">
             <Button name="close" handleClick={() => {}} />
           </Link>

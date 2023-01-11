@@ -4,6 +4,8 @@ import "./LeaderboardSelect.css";
 import { SAMPLE_LEADERBOARDS } from "../../pages/Leaderboard/SampleLeaderboards";
 
 const LeaderboardSelect = ({ currentLeaderboard, handleLeaderboardSelect }) => {
+  // passing down state and function to handle leaderboard selection from Leaderboard.js
+
   /**
    * PROPS:
    * @param {string} currentLeaderboard name of current leaderboard selected
@@ -12,6 +14,7 @@ const LeaderboardSelect = ({ currentLeaderboard, handleLeaderboardSelect }) => {
 
   return (
     <div className="leaderboard-select__container">
+      {/* display all the leaderboards */}
       {SAMPLE_LEADERBOARDS.map((leaderboard) => (
         <div
           className={`leaderboard-select__container-map ${

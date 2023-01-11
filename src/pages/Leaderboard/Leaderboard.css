@@ -40,6 +40,10 @@
   align-items: flex-start;
   justify-content: center;
   flex: 1;
+
+  /* couldn't get the map select height to be the same as the main leaderboard section */
+  /* setting height to 32rem wouldn't align it to the main leaderboard */
+  /* had to add 1.5rem to make it the same */
   height: 33.5rem;
 }
 
@@ -56,9 +60,10 @@
 .leaderboard__container-content-leaderboard-scroll {
   display: block;
   overflow-y: scroll;
+  height: 32rem;
+
   -ms-overflow-style: none;  /* Internet Explorer 10+ */
   scrollbar-width: none;  /* Firefox */
-  height: 32rem;
 }
 
 .leaderboard__container-content-leaderboard-scroll::-webkit-scrollbar { 
@@ -97,14 +102,12 @@
   transition: 0.5s color;
 }
 
-.leaderboard__container-content-leaderboard tr:not(:first-child):hover {
-  color: #4480ff;
-}
-
+/* to determine the widths of each column */
 .leaderboard__container-content-leaderboard thead th:nth-child(1) {
   /* rounded corners */
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
+
   width: 7.5%;
 }
 
@@ -129,6 +132,11 @@
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
   width: 12.5%;
+}
+
+/* text turns blue when hovering over each row in the table body (excluding header) */
+.leaderboard__container-content-leaderboard tbody tr:hover {
+  color: #4480ff;
 }
 
 .leaderboard__container-footer {
