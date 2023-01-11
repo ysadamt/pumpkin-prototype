@@ -5,13 +5,13 @@
   overflow-y: scroll;
   background: rgba(144, 144, 144, 0.1);
   border-radius: 10px;
-  
-  -ms-overflow-style: none;  /* Internet Explorer 10+ */
-  scrollbar-width: none;  /* Firefox */
+
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
 }
 
-.leaderboard-select__container::-webkit-scrollbar { 
-  display: none;  /* Safari and Chrome */
+.leaderboard-select__container::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
 }
 
 .leaderboard-select__container-map {

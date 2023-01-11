@@ -80,7 +80,7 @@ const Leaderboard = () => {
           </div>
         </div>
         <div className="leaderboard__container-footer">
-        {/* close button */}
+          {/* close button */}
           <Link to="/">
             <Button name="close" handleClick={() => {}} />
           </Link>
