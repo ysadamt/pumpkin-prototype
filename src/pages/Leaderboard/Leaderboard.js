@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import LeaderboardSelect from "../../components/LeaderboardSelect/LeaderboardSelect";
 import "./Leaderboard.css";
 import { SAMPLE_LEADERBOARDS } from "./SampleLeaderboards";
@@ -9,10 +9,6 @@ const Leaderboard = () => {
   const handleLeaderboardSelect = (leaderboard) => {
     setCurrentLeaderboard(leaderboard);
   };
-
-  useEffect(() => {
-    console.log(currentLeaderboard);
-  }, [currentLeaderboard]);
 
   return (
     <>
@@ -39,14 +35,26 @@ const Leaderboard = () => {
                   <h1>no scores yet</h1>
                 ) : (
                   <table>
-                    <tr>
-                      <th>rank</th>
-                      <th>date</th>
-                      <th>username</th>
-                      <th>score</th>
-                      <th>time spent</th>
-                      <th>replay</th>
-                    </tr>
+                    <thead>
+                      <tr>
+                        <th>rank</th>
+                        <th>date</th>
+                        <th>username</th>
+                        <th>score</th>
+                        <th>time spent</th>
+                        <th>replay</th>
+                      </tr>
+                    </thead>
+                    {filteredLeaderboard.scores.map((score) => (
+                      <tr>
+                        <td>{score.rank}</td>
+                        <td>{score.date}</td>
+                        <td>{score.username}</td>
+                        <td>{score.score}</td>
+                        <td>{score.timeSpent}</td>
+                        <td>replay</td>
+                      </tr>
+                    ))}
                   </table>
                 )}
               </>
