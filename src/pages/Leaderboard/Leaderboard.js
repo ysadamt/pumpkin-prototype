@@ -29,13 +29,19 @@ const Leaderboard = () => {
             />
           </div>
           <div className="leaderboard__container-content-leaderboard">
+            {/* use current state to filter out the current leaderboard selected in the sample array */}
             {SAMPLE_LEADERBOARDS.filter(
               (leaderboard) => leaderboard.name === currentLeaderboard
             ).map((filteredLeaderboard) => (
-              <div className="leaderboard__container-content-leaderboard-scroll">
+              <div
+                className="leaderboard__container-content-leaderboard-scroll"
+                key={filteredLeaderboard.id}
+              >
+                {/* display 'no entries' message if the array of scores is empty */}
+                {/* otherwise, display the leaderboard */}
                 {filteredLeaderboard.scores.length === 0 ? (
                   <div className="leaderboard__container-content-noScores">
-                    <h1>no entries yet :(</h1>
+                    <h1>no entries yet :</h1>
                     <h2>you can be the first to submit a score!</h2>
                   </div>
                 ) : (
@@ -50,18 +56,21 @@ const Leaderboard = () => {
                         <th>replay</th>
                       </tr>
                     </thead>
-                    {filteredLeaderboard.scores.map((score) => (
-                      <tr>
-                        <td>{score.rank}</td>
-                        <td>{score.date}</td>
-                        <td>{score.username}</td>
-                        <td>{score.score}</td>
-                        <td>{score.timeSpent}</td>
-                        <td>
-                          <Button name="watch" handleClick={() => {}} />
-                        </td>
-                      </tr>
-                    ))}
+                    <tbody>
+                      {/* show each leaderboard entry */}
+                      {filteredLeaderboard.scores.map((score) => (
+                        <tr key={score.rank}>
+                          <td>{score.rank}</td>
+                          <td>{score.date}</td>
+                          <td>{score.username}</td>
+                          <td>{score.score}</td>
+                          <td>{score.timeSpent}</td>
+                          <td>
+                            <Button name="watch" handleClick={() => {}} />
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
                   </table>
                 )}
               </div>

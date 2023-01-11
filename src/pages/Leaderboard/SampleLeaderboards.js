@@ -1,6 +1,7 @@
 import { SAMPLE_ENTRIES } from "./SampleEntries";
 
-// Sample leaderboards from pumpkin.io
+// sample leaderboards from pumpkin.io
+// each leaderboard has an id, name, and an array of scores
 export const SAMPLE_LEADERBOARDS = [
   {
     id: 1,
