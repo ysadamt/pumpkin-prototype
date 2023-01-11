@@ -6,12 +6,14 @@
 
   height: 100%;
   width: 100%;
+  gap: 1rem;
 }
 
 /* Header */
 .leaderboard__container-header {
   display: flex;
-  align-items: flex-start;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
 
   width: 100%;
@@ -35,38 +37,74 @@
 .leaderboard__container-content-mapSelect {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   flex: 1;
+  height: 33.5rem;
 }
 
 .leaderboard__container-content-leaderboard {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
+  display: block;
   flex: 5;
-
+  background: rgba(144, 144, 144, 0.1);
+  border-radius: 10px;
+  padding: 0.75rem;
   color: white;
 }
 
-.leaderboard__container-content-leaderboard table {
+
+.leaderboard__container-content-leaderboard-scroll {
+  display: block;
+  overflow-y: scroll;
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */
+  height: 32rem;
+}
+
+.leaderboard__container-content-leaderboard-scroll::-webkit-scrollbar { 
+  display: none;  /* Safari and Chrome */
+}
+
+.leaderboard__container-content-leaderboard-scroll table {
+  position: relative;
   table-layout: fixed;
-  width: 100%;
-  border: 1px solid white;
   border-collapse: collapse;
+  width: 100%;
 }
 
-.leaderboard__container-content-leaderboard th, td {
-  border: 1px solid #dddddd;
+.leaderboard__container-content-noScores {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
 }
 
-.leaderboard__container-content-leaderboard thead {
+.leaderboard__container-content-leaderboard th {
+  padding: 0.75rem 0.5rem 0.75rem 0.5rem;
+  background: rgb(17, 17, 17, 1);
+  font-size: 20px;
+  position: sticky;
+  top: 0; 
+}
+
+.leaderboard__container-content-leaderboard td {
   text-align: center;
+  padding: 0.5rem;
+}
+
+.leaderboard__container-content-leaderboard tr {
+  transition: 0.5s color;
+}
+
+.leaderboard__container-content-leaderboard tr:not(:first-child):hover {
+  color: #4480ff;
 }
 
 .leaderboard__container-content-leaderboard thead th:nth-child(1) {
-  width: 5%;
+  /* rounded corners */
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  width: 7.5%;
 }
 
 .leaderboard__container-content-leaderboard thead th:nth-child(2) {
@@ -86,9 +124,15 @@
 }
 
 .leaderboard__container-content-leaderboard thead th:nth-child(6) {
-  width: 15%;
+  /* rounded corners */
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  width: 12.5%;
 }
 
-.leaderboard__container-content-leaderboard td {
-  text-align: center;
+.leaderboard__container-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
 }

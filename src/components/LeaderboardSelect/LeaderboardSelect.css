@@ -1,9 +1,9 @@
 .leaderboard-select__container {
   display: block;
   min-width: max-content;
-  height: 32rem;
+  height: inherit;
   overflow-y: scroll;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(144, 144, 144, 0.1);
   border-radius: 10px;
   
   -ms-overflow-style: none;  /* Internet Explorer 10+ */

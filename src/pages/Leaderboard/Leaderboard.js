@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import LeaderboardSelect from "../../components/LeaderboardSelect/LeaderboardSelect";
+import Button from "../../components/Button/Button";
 import "./Leaderboard.css";
 import { SAMPLE_LEADERBOARDS } from "./SampleLeaderboards";
+import { Link } from "react-router-dom";
 
 const Leaderboard = () => {
   const [currentLeaderboard, setCurrentLeaderboard] = useState("8 Doors");
@@ -30,9 +32,12 @@ const Leaderboard = () => {
             {SAMPLE_LEADERBOARDS.filter(
               (leaderboard) => leaderboard.name === currentLeaderboard
             ).map((filteredLeaderboard) => (
-              <>
+              <div className="leaderboard__container-content-leaderboard-scroll">
                 {filteredLeaderboard.scores.length === 0 ? (
-                  <h1>no scores yet</h1>
+                  <div className="leaderboard__container-content-noScores">
+                    <h1>no entries yet :(</h1>
+                    <h2>you can be the first to submit a score!</h2>
+                  </div>
                 ) : (
                   <table>
                     <thead>
@@ -52,14 +57,21 @@ const Leaderboard = () => {
                         <td>{score.username}</td>
                         <td>{score.score}</td>
                         <td>{score.timeSpent}</td>
-                        <td>replay</td>
+                        <td>
+                          <Button name="watch" handleClick={() => {}} />
+                        </td>
                       </tr>
                     ))}
                   </table>
                 )}
-              </>
+              </div>
             ))}
           </div>
+        </div>
+        <div className="leaderboard__container-footer">
+          <Link to="/">
+            <Button name="close" handleClick={() => {}} />
+          </Link>
         </div>
       </div>
     </>
